@@ -89,15 +89,17 @@ p2Btn.addEventListener("click", (evtp2) => {
   }
 });
 
+// reset event. it will reset all except count of winning matches of players.
+
 resetBtn.addEventListener("click", (evnt) => {
   p1ScoreValue = 0;
   p2ScoreValue = 0;
+  gameOver = false;
   p1Score.textContent = p1ScoreValue;
   p2Score.textContent = p2ScoreValue;
   disableButton(p1Btn, p2Btn, "p2");
   disableButton(p2Btn, p1Btn, "p1");
   playStart = playersInArray[Math.floor(Math.random() * 2)];
-  gameOver = false;
 });
 
 //Reset All
@@ -105,15 +107,15 @@ resetAllBtn.addEventListener("click", (evtlist) => {
   winningValue = 5;
   p1ScoreValue = 0;
   p2ScoreValue = 0;
-  let player1WonScore = 0;
-  let player2WonScore = 0;
+  player1WonScore = 0;
+  player2WonScore = 0;
+  gameOver = false;
   p1Score.textContent = p1ScoreValue;
   p2Score.textContent = p2ScoreValue;
   playingToBtn.textContent = winningValue;
   disableButton(p1Btn, p2Btn, "p2");
   disableButton(p2Btn, p1Btn, "p1");
-  playStart = playersInArray[Math.floor(Math.random() * 2)];
-  gameOver = false;
   player1Won.textContent = player1WonScore;
   player2Won.textContent = player2WonScore;
+  playStart = playersInArray[Math.floor(Math.random() * 2)];
 });
